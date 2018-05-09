@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+* {
+    margin: auto;
+}
+
+body {
+    background: url(bg.png) black repeat; 
+    font-family: courier;
+    padding: 0 10%;
+    font-size: 18px;
+}
+
+header {
+    background-color: #333;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;  
+    right: 0;  
+}
+
+header img {
+    float: left;
+    padding: 10px 10%;
+}
+
+header ul {
+    float: right;
+    padding: 14px 10%;
+}
+
+header li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+header a {
+    color: #ff0099;
+    text-decoration: underline;
+    text-transform: uppercase;
+    padding: 20px;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-family: 'Slabo 27px', serif;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-family: 'Slabo 27px', serif;
+}
+
+hr {
+    border-top: 1px dashed #000;
+    width: 10px;
+    text-align: center;
+    letter-spacing: 10px;
+}
+
+div {
+    padding: 35px 0px;
+}
+
+#home {
+    padding-top: 130px;
+}
+
+.separator {
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+}
+
+p {
+    font-family: consolas;
+}
+
+#home h1 {
+    text-align: left;
+    font-size: 60px;
+}
+
+#home h2 {
+    color: #ff0099;
+    font-size: 35px;
+}
