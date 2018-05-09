@@ -1,2 +1,2 @@
 # zynori
-new repo
+https://github.com/zynori?tab=repositories
