@@ -1,2 +1,2 @@
 # zynori
-https://github.com/zynori?tab=repositories
+:sparkles: https://github.com/zynori?tab=repositories :sparkles:
