@@ -4,18 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace helloUser
+namespace iWontCheatOnTheExams
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string userName;
+            for (int i = 0; i <= 100; i++)
+            {
+                Console.WriteLine("I won't cheat on the exam!");
+            }
 
-            Console.WriteLine("What's your name?");
-            userName = Console.ReadLine();
-
-            Console.WriteLine("Hello {0}", userName + "!");
             Console.ReadLine();
         }
     }
