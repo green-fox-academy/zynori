@@ -4,32 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace summing
+namespace factorio
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("Give me a number: ");
+            Console.WriteLine("Gimme a number: ");
             int number = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(Sum(number));
+            Console.WriteLine(Factorial(number));
 
             Console.ReadLine();
         }
-
-        public static int Sum(int number)
+        
+        public static int Factorial(int number)
         {
-            int sumOfNumber = 0;
-
+            int factOfNumber = 1;
             for (int i = 1; i <= number; i++)
             {
-               sumOfNumber += i;
+                factOfNumber *= i;
             }
 
-            return sumOfNumber;
+            return factOfNumber;
         }
-        // - Write a function called `sum` that sum all the numbers
-        //   until the given parameter and returns with an integer
     }
 }
