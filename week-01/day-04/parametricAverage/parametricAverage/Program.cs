@@ -10,26 +10,25 @@ namespace parametricAverage
     {
         static void Main(string[] args)
         {
+
+            int mainNumber;
+            int number = 0;
+            int sum = 0;
+            double avg;
+
             Console.Write("Gimme a number: ");
-            int number = int.Parse(Console.ReadLine());
-            int otherNumbers = 0;
+            mainNumber = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i != otherNumbers; i++)
+            for (int i = 0; i < mainNumber; i++)
             {
-                Console.Write("Gimme more: ");
-                otherNumbers = int.Parse(Console.ReadLine());
-
-                int finalnumber = otherNumbers + number;
+                Console.Write("Gimme some more: ");
+                number = int.Parse(Console.ReadLine());
+                sum += number;
             }
 
-           
-
-            int avgnumber = finalnumber / otherNumbers;
-
-            Console.WriteLine("final: " + finalnumber + ", " + "avg: " + avgnumber);
-
-            Console.ReadKey();
-
+            avg = (double)sum / number;
+            Console.WriteLine("Sum: " + sum + ", " + "Average: " + avg);
+            Console.ReadLine();
 
             // Write a program that asks for a number.
             // It would ask this many times to enter an integer,
