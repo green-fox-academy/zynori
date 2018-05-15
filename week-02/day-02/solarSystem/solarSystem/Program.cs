@@ -29,8 +29,12 @@ namespace solarSystem
             foreach (string currentPlanet in inputPlanet)
             {
                 planetBuilder
-                .Append(currentPlanet)
-                .Append(", ");
+                .Append(currentPlanet);
+
+                if (inputPlanet.IndexOf(currentPlanet) != inputPlanet.Count - 1)
+                {
+                    planetBuilder.Append(", ");
+                }
             }
 
             return planetBuilder.ToString();
