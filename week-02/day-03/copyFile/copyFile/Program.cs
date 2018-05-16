@@ -26,7 +26,6 @@ namespace copyFile
 	                {
                         Console.WriteLine(false);
                     }
-                    sr.Dispose();
                 }
             }
             
