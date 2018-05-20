@@ -31,7 +31,7 @@ namespace linePlay
         }
         public void LineDrawing(FoxDraw foxdraw, double x, double y)
         {
-            for (int i = 0; i < canvas.Width; i++)
+            for (int i = 0; i < canvas.Width/10; i++)
             {
                 double lineStart = x + i * 10;
                 double lineEnd = y + i * 10 + 1;
@@ -39,7 +39,7 @@ namespace linePlay
                 foxdraw.DrawLine(lineStart, canvas.Width, x, lineEnd);
             }
 
-            for (int i = 0; i < canvas.Width; i++)
+            for (int i = 0; i < canvas.Width/10; i++)
             {
                 double lineEnd = x + i * 10;
                 double lineStart = y + i * 10 + 1;
