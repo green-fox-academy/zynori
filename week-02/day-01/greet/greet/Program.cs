@@ -11,19 +11,17 @@ namespace greet
         static void Main(string[] args)
         {
             string al = "Greenfox";
-
-            Console.WriteLine(Greet(al));
-
+            Greet(al);
+            // - Create a string variable named `al` and assign the value `Greenfox` to it
+            // - Create a function called `greet` that greets it's input parameter
+            //     - Greeting is printing e.g. `Greetings dear, Greenfox`
+            // - Greet `al`
             Console.ReadLine();
         }
 
-        public static string Greet(string greetings)
+        static void Greet(string name)
         {
-            return "Greetings dear, Greenfox";
+            Console.WriteLine("Greetings dear, {0}", name + "\n" + name);
         }
-        // - Create a string variable named `al` and assign the value `Greenfox` to it
-        // - Create a function called `greet` that greets it's input parameter
-        //     - Greeting is printing e.g. `Greetings dear, Greenfox`
-        // - Greet `al`
     }
 }

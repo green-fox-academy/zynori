@@ -11,17 +11,17 @@ namespace doubling
         static void Main(string[] args)
         {
             int baseNum = 123;
-
             Console.WriteLine(Doubling(baseNum));
+            // - Create an integer variable named `baseNum` and assign the value `123` to it
+            // - Create a function called `doubling` that doubles it's input parameter and returns with an integer
+            // - Print the result of `doubling(baseNum)`
             Console.ReadLine();
         }
 
-        public static int Doubling(int num)
+        private static int Doubling(int baseNum)
         {
-            return num * 2;
+            baseNum = baseNum * 2;
+            return baseNum;
         }
-        // - Create an integer variable named `baseNum` and assign the value `123` to it
-        // - Create a function called `doubling` that doubles it's input parameter and returns with an integer
-        // - Print the result of `doubling(baseNum)`
     }
 }
