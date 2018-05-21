@@ -10,20 +10,22 @@ namespace palindrome
     {
         static void Main(string[] args)
         {
-            string firstword = Console.ReadLine();
-            Console.WriteLine(CreatePalindrome(firstword));
-            Console.ReadLine();
             //Create a function named create palindrome following your current language's style guide. It should take a string, create a palindrome from it and then return it.
+            string inputWord = Console.ReadLine();
+            Console.WriteLine(CreatePalindrome(inputWord));
+            Console.ReadLine();
         }
 
-        static string CreatePalindrome(string word)
+        static string CreatePalindrome(string inputWord)
         {
-            string tempword = word;
-            for (int i = word.Length - 1; i >= 0; i--)
+            string result = inputWord;
+
+            for (int i = inputWord.Length -1; i >= 0; i--)
             {
-                tempword += word[i];
+                result += inputWord[i];
             }
-            return tempword;
+
+            return result;
         }
     }
 }
