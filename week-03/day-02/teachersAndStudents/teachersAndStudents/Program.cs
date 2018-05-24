@@ -10,14 +10,18 @@ namespace teachersAndStudents
     {
         static void Main(string[] args)
         {
-            var teacherName = new Teacher("Bela");
-            var teacherName1 = new Teacher("Lilla");
+            var teacher1 = new Teacher("Bela");
+            var teacher2 = new Teacher("Lilla");
 
-            var studentName = new Student("Jeno");
-            var studentName1 = new Student("Olga");
-            var studentName2 = new Student("Klara");
+            var student1 = new Student("Jeno");
+            var student2 = new Student("Olga");
 
-            Console.WriteLine($"The {studentName1.Question(teacherName1)} ask a question and {teacherName} is answering");
+            teacher1.Teach(student1);
+            teacher1.Teach(student2);
+
+            student2.Question(teacher2);
+            student2.Question(teacher1);
+
             Console.ReadKey();
 
         }

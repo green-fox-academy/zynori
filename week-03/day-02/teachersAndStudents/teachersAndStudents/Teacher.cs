@@ -8,21 +8,26 @@ namespace teachersAndStudents
 {
     class Teacher
     {
-        private string TeacherName;
+        private string name;
 
-        public Teacher(string teacherName)
+        public Teacher(string name)
         {
-            this.TeacherName = teacherName;
+            this.name = name;
         }
 
-        public void Teach(Student studentName)
+        public void Teach(Student student)
         {
-            Student.Learn();
+            student.Learn();
         }
 
-        public static void Answer()
+        public void Answer()
         {
-            Console.WriteLine($"im teaching");
+            Console.WriteLine($"{this.GetName()}: I'm teaching");
+        }
+
+        public string GetName()
+        {
+            return this.name;
         }
     }
 }
