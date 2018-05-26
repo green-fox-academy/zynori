@@ -10,9 +10,9 @@ namespace calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please type in the expression: ");
-            string yourInput = Console.ReadLine();
-            Console.WriteLine(Calculate(yourInput));
+            Console.WriteLine("Gimme a operation and two numbers: ");
+            string inputExpression = Console.ReadLine();
+            Console.WriteLine(Calculate(inputExpression));
             Console.ReadLine();
             
             // Create a simple calculator application which reads the parameters from the prompt
@@ -33,42 +33,52 @@ namespace calculator
             // Exit
         }
 
-        public static string Calculate(string yourInput)
+        static string Calculate(string inputExpression)
         {
-            string[] splitInput = yourInput.Split(' ');
-            string myOrerator = splitInput[0];
-            double firstNumber = Convert.ToDouble(splitInput[1]);
-            double secondNumber = Convert.ToDouble(splitInput[2]);
+            string[] expressionParts = inputExpression.Split(' ');
 
-            if (myOrerator == "+")
+            if (expressionParts.Length != 3)
             {
-                double mySolution = firstNumber + secondNumber;
-                return "Your solution is " + mySolution;
+                Console.WriteLine("Invalid parameters!");
+                return "";
             }
-            else if (myOrerator == "-")
+
+            string[] validOperations = { "+", "-", "/", "*", "%" };
+
+            if (!validOperations.Contains(expressionParts[0]))
             {
-                double mySolution = firstNumber - secondNumber;
-                return "Your solution is " + mySolution;
+                Console.WriteLine("Invalid operation!");
+                return "";
             }
-            else if (myOrerator == "*")
+
+            int number1 = int.Parse(expressionParts[1]);
+            int number2 = int.Parse(expressionParts[2]);
+            double result = 0;
+
+            switch (expressionParts[0])
             {
-                double mySolution = firstNumber * secondNumber;
-                return "Your solution is " + mySolution;
+                case "+":
+                    result = AddOperation(number1, number2);
+                    break;
+                case "-":
+                    result = SubOperation(number1, number2);
+                    break;
+                default:
+                    Console.WriteLine("Invalid operation!");
+                    return "";
             }
-            else if (myOrerator == "/")
-            {
-                double mySolution = firstNumber / secondNumber;
-                return "Your solution is " + mySolution;
-            }
-            else if (myOrerator == "%")
-            {
-                double mySolution = firstNumber % secondNumber;
-                return "Your solution is " + mySolution;
-            }
-            else
-            {
-                return "Please specify your input";
-            }
+
+            return result.ToString();
+        }
+
+        private static double AddOperation(int number1, int number2)
+        {
+            return number1 + number2;
+        }
+
+        private static double SubOperation(int number1, int number2)
+        {
+            return number1 - number2;
         }
     }
 }
