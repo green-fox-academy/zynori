@@ -12,7 +12,7 @@ namespace printEven
         {
             for (int i = 0; i <= 500; i++)
             {
-                if (i%2==0)
+                if ( i % 2 == 0 )
                 {
                     Console.WriteLine(i++);
                 }
@@ -22,3 +22,4 @@ namespace printEven
         }
     }
 }
+// Create a program that prints all the even numbers between 0 and 500
