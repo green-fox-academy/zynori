@@ -10,23 +10,16 @@ namespace swap
     {
         static void Main(string[] args)
         {
-            // Swap the values of the variables
             int a = 123;
             int b = 526;
-
-            Console.WriteLine(a);
-            Console.WriteLine(b);
-
             int c = b;
             b = a;
             a = c;
 
             Console.WriteLine(a);
             Console.WriteLine(b);
-
-
-
             Console.ReadLine();
         }
     }
 }
+// Swap the values of the variables
