@@ -10,7 +10,7 @@ namespace basicInfo
     {
         static void Main(string[] args)
         {
-            string myName = "Nora GIczy";
+            string myName = "Nora Giczy";
             int myAge = 28;
             double myHeight = 1.68;
             bool married = false;
@@ -26,10 +26,14 @@ namespace basicInfo
             else
             {
                 Console.WriteLine("married: not married");
-
             }
 
             Console.ReadLine();
         }
     }
 }
+// Define several things as a variable then print their values
+// Your name as a string
+// Your age as an integer
+// Your height in meters as a double
+// Whether you are married or not as a boolean
