@@ -14,7 +14,6 @@ namespace factorio
             int number = int.Parse(Console.ReadLine());
 
             Console.WriteLine(Factorial(number));
-
             Console.ReadLine();
         }
         
@@ -30,3 +29,5 @@ namespace factorio
         }
     }
 }
+// - Create a function called `factorio`
+//   that returns it's input's factorial
