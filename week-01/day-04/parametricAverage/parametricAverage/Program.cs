@@ -10,7 +10,6 @@ namespace parametricAverage
     {
         static void Main(string[] args)
         {
-
             int mainNumber;
             int number = 0;
             int sum = 0;
@@ -27,15 +26,15 @@ namespace parametricAverage
             }
 
             avg = (double)sum / number;
+
             Console.WriteLine("Sum: " + sum + ", " + "Average: " + avg);
             Console.ReadLine();
-
-            // Write a program that asks for a number.
-            // It would ask this many times to enter an integer,
-            // if all the integers are entered, it should print the sum and average of these
-            // integers like:
-            //
-            // Sum: 22, Average: 4.4
         }
     }
 }
+// Write a program that asks for a number.
+// It would ask this many times to enter an integer,
+// if all the integers are entered, it should print the sum and average of these
+// integers like:
+//
+// Sum: 22, Average: 4.4
