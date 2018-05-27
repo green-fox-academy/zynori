@@ -16,7 +16,6 @@ namespace divideByZero
 
             Console.WriteLine(DoTheMath(givenNumber));
             Console.ReadLine();
-            
         }
 
         static string DoTheMath(int givenNumber)
