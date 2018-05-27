@@ -12,11 +12,6 @@ namespace logs
     {
         static void Main(string[] args)
         {
-            // Read all data from 'log.txt'.
-            // Each line represents a log message from a web server
-            // Write a function that returns an array with the unique IP adresses.
-            // Write a function that returns the GET / POST request ratio.
-
             List<String> log = Read();
             UniqueIP(log);
             GPratio(log);
@@ -26,6 +21,7 @@ namespace logs
         static List<String> Read() {
             StreamReader sr = new StreamReader("log.txt");
             List<String> rows = new List<String>();
+
             while (!sr.EndOfStream)
             {
                 rows.Add(sr.ReadLine());
@@ -39,6 +35,7 @@ namespace logs
 
         static List<String> UniqueIP(List<String> list) {
             List<String> uniqueIps = new List<String>();
+
             foreach (String row in list)
             {
                 String ip = row.Substring(27, 11);
@@ -57,8 +54,6 @@ namespace logs
             {
                 if (list[i].Contains("GET"))
                 {
-                    //getCount = getCount + 1;
-                    //getCount += 1;
                     getCount++;
                 }
                 else if (list[i].Contains("POST")) {
@@ -75,3 +70,7 @@ namespace logs
         }
     }
 }
+// Read all data from 'log.txt'.
+// Each line represents a log message from a web server
+// Write a function that returns an array with the unique IP adresses.
+// Write a function that returns the GET / POST request ratio.
