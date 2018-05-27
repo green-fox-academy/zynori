@@ -12,9 +12,9 @@ namespace appendA2
         {
             string[] animals = { "kuty", "macsk", "cic" };
 
-            for (int i = 0; i < animals.Length; i++)
+            foreach (var appendAnimals in animals)
             {
-                Console.WriteLine(animals[i] + "a");
+                Console.WriteLine(appendAnimals + "a");
             }
 
             Console.ReadLine();
