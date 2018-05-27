@@ -13,6 +13,7 @@ namespace drawDiagonal
             Console.Write("Give me a number: ");
 
             int number = Int32.Parse(Console.ReadLine());
+
             Console.WriteLine();
 
             for (int i = 0; i < number; i++)
@@ -34,3 +35,11 @@ namespace drawDiagonal
         }
     }
 }
+// Write a program that reads a number from the standard input, then draws a
+// square like this:
+// %%%%%
+// %%  %
+// % % %
+// %  %%
+// %%%%%
+// The square should have as many lines as the number was
