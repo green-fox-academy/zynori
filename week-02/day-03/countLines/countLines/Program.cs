@@ -11,11 +11,6 @@ namespace countLines
     {
         static void Main(string[] args)
         {
-            // Write a function that takes a filename as string,
-            // then returns the number of lines the file contains.
-            // It should return zero if it can't open the file, and
-            // should not raise any error.
-
             using (FileStream fs = File.Create("test.txt"))
             {
                 Byte[] info = new UTF8Encoding(true).GetBytes("This is a new file...");
@@ -40,3 +35,7 @@ namespace countLines
         }
     }
 }
+// Write a function that takes a filename as string,
+// then returns the number of lines the file contains.
+// It should return zero if it can't open the file, and
+// should not raise any error.
