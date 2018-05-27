@@ -12,25 +12,9 @@ namespace calculator
         {
             Console.WriteLine("Gimme a operation and two numbers: ");
             string inputExpression = Console.ReadLine();
+
             Console.WriteLine(Calculate(inputExpression));
-            Console.ReadLine();
-            
-            // Create a simple calculator application which reads the parameters from the prompt
-            // and prints the result to the prompt.
-            // It should support the following operations,
-            // reate a method named "Calculate()":
-            // +, -, *, /, % and it should support two operands.
-            // The format of the expressions must be: {operation} {operand} {operand}.
-            // Examples: "+ 3 3" (the result will be 6) or "* 4 4" (the result will be 16)
-
-            // You can use the Scanner class
-            // It should work like this:
-
-            // Start the program
-            // It prints: "Please type in the expression:"
-            // Waits for the user input
-            // Print the result to the prompt
-            // Exit
+            Console.ReadLine();            
         }
 
         static string Calculate(string inputExpression)
@@ -63,6 +47,15 @@ namespace calculator
                 case "-":
                     result = SubOperation(number1, number2);
                     break;
+                case "*":
+                    result = MultiplyOperation(number1, number2);
+                    break;
+                case "/":
+                    result = DivisionOperation(number1, number2);
+                    break;
+                case "%":
+                    result = PercentageOperation(number1, number2);
+                    break;
                 default:
                     Console.WriteLine("Invalid operation!");
                     return "";
@@ -80,5 +73,34 @@ namespace calculator
         {
             return number1 - number2;
         }
+
+        private static double MultiplyOperation(int number1, int number2)
+        {
+            return number1 * number2;
+        }
+
+        private static double DivisionOperation(int number1, int number2)
+        {
+            return number1 / number2;
+        }
+
+        private static double PercentageOperation(int number1, int number2)
+        {
+            return number1 % number2;
+        }
     }
 }
+// Create a simple calculator application which reads the parameters from the prompt
+// and prints the result to the prompt.
+// It should support the following operations,
+// reate a method named "Calculate()":
+// +, -, *, /, % and it should support two operands.
+// The format of the expressions must be: {operation} {operand} {operand}.
+// Examples: "+ 3 3" (the result will be 6) or "* 4 4" (the result will be 16)
+// You can use the Scanner class
+// It should work like this:
+// Start the program
+// It prints: "Please type in the expression:"
+// Waits for the user input
+// Print the result to the prompt
+// Exit
