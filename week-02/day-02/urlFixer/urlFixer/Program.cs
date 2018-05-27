@@ -16,14 +16,14 @@ namespace urlFixer
 
             int index = url.IndexOf("https");
             string indexUrl = url.Insert(index + "https".Length, ":");
-            url = indexUrl;
 
-            // Accidentally I got the wrong URL for a funny subreddit. It's probably "odds" and not "bots"
-            // Also, the URL is missing a crucial component, find out what it is and insert it too!
-            // Try to solve it more than once using different string functions!
+            url = indexUrl;
 
             Console.WriteLine(url);
             Console.ReadLine();
         }
     }
 }
+// Accidentally I got the wrong URL for a funny subreddit. It's probably "odds" and not "bots"
+// Also, the URL is missing a crucial component, find out what it is and insert it too!
+// Try to solve it more than once using different string functions!
