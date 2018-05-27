@@ -11,10 +11,10 @@ namespace printAll
         static void Main(string[] args)
         {
             int[] numbers = { 4, 5, 6, 7 };
-
-            for (int i = 0; i < numbers.Length; i++)
+            
+            foreach (var itemsOfNumbers in numbers)
             {
-                Console.WriteLine(numbers[i]);
+                Console.WriteLine(itemsOfNumbers);
             }
 
             Console.ReadLine();
