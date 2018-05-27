@@ -14,7 +14,6 @@ namespace summing
             int number = int.Parse(Console.ReadLine());
 
             Console.WriteLine(Sum(number));
-
             Console.ReadLine();
         }
 
