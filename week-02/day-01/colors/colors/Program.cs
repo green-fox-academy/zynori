@@ -17,7 +17,6 @@ namespace colors
                 colors[2] = new string[] { "orchid", "violet", "pink", "hot pink" };
             };
 
-
             // - Create a two dimensional array
             //   which can contain the different shades of specified colors
             // - In `colors[0]` store the shades of green:
