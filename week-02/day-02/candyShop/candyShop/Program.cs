@@ -16,13 +16,7 @@ namespace candyShop
             list.Add("Brownie");
             list.Add(false);
 
-            // Accidentally we added "2" and "false" to the list.
-            // Your task is to change from "2" to "Croissant" and change from "false" to "Ice cream"
-            // No, don't just remove the lines
-            // Create a method called Sweets() which takes the list as a parameter.
-
-            Console.WriteLine(Sweets(list));
-            // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
+            Console.WriteLine(Sweets(list));       
             Console.ReadKey();
         }
 
@@ -50,3 +44,8 @@ namespace candyShop
         }
     }
 }
+// Accidentally we added "2" and "false" to the list.
+// Your task is to change from "2" to "Croissant" and change from "false" to "Ice cream"
+// No, don't just remove the lines
+// Create a method called Sweets() which takes the list as a parameter.
+// Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
