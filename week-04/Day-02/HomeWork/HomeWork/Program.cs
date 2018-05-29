@@ -48,24 +48,26 @@ namespace HomeWork
                 person.Introduce();
                 person.GetGoal();
             }
-
-            foreach (var student in students)
+            
+            foreach (var person in students)
             {
-                student.Introduce();
-                student.GetGoal();
+                person.Introduce();
+                person.GetGoal();
             }
 
-            foreach (var mentor in mentors)
+            foreach (var person in mentors)
             {
-                mentor.Introduce();
-                mentor.GetGoal();
+                person.Introduce();
+                person.GetGoal();
             }
 
-            foreach (var sponsor in sponsors)
+            foreach (var person in sponsors)
             {
-                sponsor.Introduce();
-                sponsor.GetGoal();
+                person.Introduce();
+                person.GetGoal();
             }
+            
+            Console.ReadLine();
         }
     }
 }

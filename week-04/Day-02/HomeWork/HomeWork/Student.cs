@@ -9,29 +9,33 @@ namespace HomeWork
     class Student : Person
     {
         private string previousOrganization;
-        private double skippedDays = 0;
-        private int numberOfDays;
-        
+        private double skippedDays;
 
-        public Student(string name, int age, string gender, string previousOrganization, double skippedDays) : base(name, age, gender)
+        public Student(string name, int age, string gender, string previousOrganization) : base(name, age, gender)
         {
             this.previousOrganization = previousOrganization;
-            this.skippedDays = skippedDays;
+            skippedDays = 0;
         }
         
-        public void GetGoal()
+        public Student() : base()
+        {
+            previousOrganization = "The School of Life";
+            skippedDays = 0;
+        }
+        
+        public override void GetGoal()
         { 
             Console.WriteLine("Be a junior software developer.");
         }
 
-        public void Introduce()
+        public override void Introduce()
         {
-            Console.WriteLine($"Hi, I'm {name}, a {age} year old {gender} from {this.previousOrganization} who skipped {this.skippedDays} days from the course already.");
+            Console.WriteLine($"Hi, I'm {Name}, a {Age} year old {Gender} from {this.previousOrganization} who skipped {this.skippedDays} days from the course already.");
         }
 
         public void SkipDays(int numberOfDays)
         {
-            skippedDays++;
+            skippedDays += numberOfDays;
         }
     }
 }
