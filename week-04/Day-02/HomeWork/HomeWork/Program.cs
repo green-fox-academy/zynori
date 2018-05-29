@@ -66,7 +66,12 @@ namespace HomeWork
                 person.Introduce();
                 person.GetGoal();
             }
-            
+
+            Cohort ocelot = new Cohort("OCELOT");
+            ocelot.AddStudent(student);
+            ocelot.AddMentor(mentor);
+
+            ocelot.Info();
             Console.ReadLine();
         }
     }

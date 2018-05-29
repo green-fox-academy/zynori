@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8814326-421A-4085-98D4-37CB3DCBF49A}</ProjectGuid>
+    <ProjectGuid>{95147DB7-7269-4509-8127-BD2CA6D285A7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HomeWork</RootNamespace>
-    <AssemblyName>HomeWork</AssemblyName>
+    <RootNamespace>GardenApp</RootNamespace>
+    <AssemblyName>GardenApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,13 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cohort.cs" />
-    <Compile Include="Mentor.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="Flower.cs" />
+    <Compile Include="Garden.cs" />
+    <Compile Include="Plant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sponsor.cs" />
-    <Compile Include="Student.cs" />
+    <Compile Include="Tree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
