@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace GardenApp
 {
-    class Plant : Garden
+    public class Plant
     {
         private string type;
         private string color;
+        private int needForWater;
+        private double waterAbsorp;
 
-        public Plant(string type, string color)
+        public Plant(string type, string color, int needForWater, double waterAbsorp)
         {
             this.type = type;
             this.color = color;
+            this.needForWater = needForWater;
+            this.waterAbsorp = waterAbsorp;
+            this.Show();
         }
 
         public string Type
@@ -33,9 +38,25 @@ namespace GardenApp
             }
         }
 
+        public int NeedForWater
+        {
+            get
+            {
+                return needForWater;
+            }
+        }
+
+        public double WaterAbsorp
+        {
+            get
+            {
+                return waterAbsorp;
+            }
+        }
+
         public void Show()
         {
-            Console.WriteLine(color, type);
+            Console.WriteLine(color + " " + type);
         }
     }
 }

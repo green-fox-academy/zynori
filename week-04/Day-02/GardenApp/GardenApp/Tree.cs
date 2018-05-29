@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GardenApp
 {
-    class Tree : Plant
+    public class Tree : Plant
     {
-        public Tree(string type, string color) : base(type, color)
+        public Tree(string type, string color, int needForWater, double waterAbsorp) : base(type, color, needForWater, waterAbsorp)
         { }
     }
 }
