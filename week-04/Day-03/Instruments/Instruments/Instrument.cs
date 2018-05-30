@@ -13,6 +13,5 @@ namespace Instruments
         protected string Name { get => name; set => name = value; }
 
         public abstract void Play();
-        public abstract void Sound();
     }
 }

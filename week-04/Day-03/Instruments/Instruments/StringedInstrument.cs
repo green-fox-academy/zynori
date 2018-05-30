@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 
 namespace Instruments
 {
-    class StringedInstrument : Instrument
+    abstract class StringedInstrument : Instrument
     {
         private int numberOfStrings;
 
         public int NumberOfStrings { get => numberOfStrings; set => numberOfStrings = value; }
 
+        public abstract string Sound();
+
         public override void Play()
         {
-            
-        }
-
-        public override void Sound()
-        {
-            
+            Sound();
         }
     }
 }
