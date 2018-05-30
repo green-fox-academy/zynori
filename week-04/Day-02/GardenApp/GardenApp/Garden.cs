@@ -18,5 +18,10 @@ namespace GardenApp
             plants.Add(new Flower("flower", "yellow", 2, 7));
             plants.Add(new Flower("flower", "blue", 4, 5));
         }
+
+        public int Watering()
+        {
+           
+        }
     }
 }

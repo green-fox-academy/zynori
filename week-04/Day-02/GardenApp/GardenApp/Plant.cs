@@ -10,15 +10,17 @@ namespace GardenApp
     {
         private string type;
         private string color;
-        private int needForWater;
+        private int waterLevel;
         private double waterAbsorp;
+        private int waterAmount;
 
-        public Plant(string type, string color, int needForWater, double waterAbsorp)
+        public Plant(string type, string color, int waterLevel, double waterAbsorp)
         {
             this.type = type;
             this.color = color;
-            this.needForWater = needForWater;
+            this.waterLevel = waterLevel;
             this.waterAbsorp = waterAbsorp;
+            waterAmount = 0;
             this.Show();
         }
 
@@ -38,11 +40,11 @@ namespace GardenApp
             }
         }
 
-        public int NeedForWater
+        public int WaterLevel
         {
             get
             {
-                return needForWater;
+                return waterLevel;
             }
         }
 
@@ -56,7 +58,7 @@ namespace GardenApp
 
         public void Show()
         {
-            Console.WriteLine(color + " " + type);
+            Console.WriteLine($"There is one {color} {type} in the garden.");
         }
     }
 }
