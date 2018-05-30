@@ -8,19 +8,19 @@ namespace Instruments
 {
     class ElectricGuitar : StringedInstrument
     {
-        public ElectricGuitar(int NumberOfStrings)
+        public ElectricGuitar() : base("Electric Guitar", 6) { }
+
+        public ElectricGuitar(int numberOfStrings) : base("ElectricGuitar", numberOfStrings) { }
+        
+        
+        public override void Play()
         {
-            this.NumberOfStrings = NumberOfStrings;
+            Console.WriteLine($"{name}, a {numberOfStrings}-stringed instrument that {Sound()}");
         }
 
-        public ElectricGuitar()
-        {
-            NumberOfStrings = 6;
-        }
-        
         public override string Sound()
         {
-            return "Twang";
+            return "Twangs"; 
         }
     }
 }

@@ -8,15 +8,14 @@ namespace Instruments
 {
     abstract class StringedInstrument : Instrument
     {
-        private int numberOfStrings;
+        protected int numberOfStrings;
 
-        public int NumberOfStrings { get => numberOfStrings; set => numberOfStrings = value; }
+        protected StringedInstrument(string name, int numberOfStrings) : base(name)
+        {
+            this.numberOfStrings = numberOfStrings;
+        }
 
         public abstract string Sound();
 
-        public override void Play()
-        {
-            Sound();
-        }
     }
 }

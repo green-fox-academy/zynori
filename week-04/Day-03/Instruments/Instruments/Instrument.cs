@@ -8,9 +8,12 @@ namespace Instruments
 {
     abstract class Instrument
     {
-        private string name;
+        protected string name;
 
-        protected string Name { get => name; set => name = value; }
+        public Instrument(string name)
+        {
+            this.name = name;
+        }
 
         public abstract void Play();
     }
