@@ -38,16 +38,16 @@ namespace HomeWork
         {
             skippedDays += numberOfDays;
         }
-
-        object ICloneable.Clone()
-        {
-            Student clonedStudent = new Student(Name, Age, Gender, previousOrganization);
-            return clonedStudent;
-        }
-
+        
         public override string ToString()
         {
             return $"{Name} {Age} {Gender} {previousOrganization}";
+        }
+
+        public object Clone()
+        {
+            Student clonedStudent = new Student(Name, Age, Gender, previousOrganization);
+            return clonedStudent;
         }
     }
 }
