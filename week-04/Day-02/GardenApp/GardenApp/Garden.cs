@@ -10,18 +10,60 @@ namespace GardenApp
     {
         private List<Plant> plants;
         
-        public Garden()
+        public Garden(List<Plant> plants)
         {
-            plants = new List<Plant>();
-            plants.Add(new Tree("tree", "purple", 1, 4));
-            plants.Add(new Tree("tree", "orange", 1, 4));
-            plants.Add(new Flower("flower", "yellow", 2, 7));
-            plants.Add(new Flower("flower", "blue", 4, 5));
+            this.plants = plants;
         }
 
-        public int Watering()
+        public void AddPlant(Plant plant)
         {
-           
+            plants.Add(plant);
+        }
+        
+        public List<string> GetStatus()
+        {
+            List<string> result = new List<string>();
+
+            foreach (Plant plant in plants)          
+            {
+                string status;
+
+                if (plant.NeedWater())
+                {
+                    status = "needs water";
+                }
+                else
+                {
+                    status = "doesn't need water";
+                }
+
+                result.Add($"The {plant.Color} {plant.GetType()} {status}.");
+            }
+
+            return result;
+        }
+        
+        public void Watering(double waterAmount)
+        {
+            int thirstyPlants = 0;
+
+            foreach (Plant plant in plants)
+            {
+                if (plant.NeedWater())
+                {
+                    thirstyPlants++;
+                }
+            }
+
+            double waterPerPlant = waterAmount / thirstyPlants;
+
+            foreach (Plant plant in plants)
+            {
+                if (plant.NeedWater())
+                {
+                    plant.Watering(waterPerPlant);
+                }
+            }
         }
     }
 }

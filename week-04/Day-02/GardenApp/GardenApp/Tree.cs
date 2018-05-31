@@ -8,7 +8,10 @@ namespace GardenApp
 {
     public class Tree : Plant
     {
-        public Tree(string type, string color, int needForWater, double waterAbsorp) : base(type, color, needForWater, waterAbsorp)
-        { }
+        public Tree(string color) : base(color)
+        {
+            waterAbsorp = 0.4;
+            minWaterAmount = 10;
+        }
     }
 }

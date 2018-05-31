@@ -8,7 +8,10 @@ namespace GardenApp
 {
     public class Flower : Plant
     {
-        public Flower(string type, string color, int needForWater, double waterAbsorp) : base(type, color, needForWater, waterAbsorp)
-        { }
+        public Flower(string color) : base(color)
+        {
+            waterAbsorp = 0.75;
+            minWaterAmount = 5;
+        }
     }
 }

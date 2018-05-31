@@ -6,32 +6,18 @@ using System.Threading.Tasks;
 
 namespace GardenApp
 {
-    public class Plant
+    public abstract class Plant
     {
-        private string type;
-        private string color;
-        private int waterLevel;
-        private double waterAbsorp;
-        private int waterAmount;
+        protected string color;
+        protected double waterLevel = 0;
+        protected double waterAbsorp;
+        protected double minWaterAmount = 0;
 
-        public Plant(string type, string color, int waterLevel, double waterAbsorp)
+        public Plant(string color)
         {
-            this.type = type;
             this.color = color;
-            this.waterLevel = waterLevel;
-            this.waterAbsorp = waterAbsorp;
-            waterAmount = 0;
-            this.Show();
         }
-
-        public string Type
-        {
-            get
-            {
-                return type;
-            }
-        }
-
+     
         public string Color
         {
             get
@@ -40,7 +26,7 @@ namespace GardenApp
             }
         }
 
-        public int WaterLevel
+        public double WaterLevel
         {
             get
             {
@@ -48,17 +34,14 @@ namespace GardenApp
             }
         }
 
-        public double WaterAbsorp
+        public void Watering(double waterAmount)
         {
-            get
-            {
-                return waterAbsorp;
-            }
+            waterLevel += waterAbsorp * waterAmount;
         }
 
-        public void Show()
+        public bool NeedWater()
         {
-            Console.WriteLine($"There is one {color} {type} in the garden.");
+            return minWaterAmount > waterLevel;
         }
     }
 }
