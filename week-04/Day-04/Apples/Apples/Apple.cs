@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Apples
 {
-    class Apple
+    public class Apple
     {
-        public string GetApple()
+        public static string GetApple()
         {
             return "apple";
         }

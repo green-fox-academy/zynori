@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using Apples;
 
 
 namespace TestEnviroment
@@ -8,9 +9,9 @@ namespace TestEnviroment
     public class Class1
     {
         [TestCase]
-        public void WorksOrNot()
+        public void ShouldGetTheAppleString()
         {
-            Assert.AreEqual(1, 1);
+            Assert.AreEqual(Apple.GetApple(), "apple");
         }
     }
 }
