@@ -17,7 +17,10 @@ namespace Exercise2
                 where num % 2 == 1
                 select num).Average();
 
-            Console.WriteLine(avgOddNums);
+            // with lambda
+            double lamAvgOdd = n.Where(num => num % 2 == 1).Average();
+
+            Console.WriteLine(avgOddNums + " " + lamAvgOdd);
             Console.ReadLine();
         }
     }
