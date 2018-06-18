@@ -13,12 +13,12 @@ namespace Exercise6
             Console.WriteLine("Write something pls");
             string inputStuff = Console.ReadLine();
 
-            var freq =
-                from a in inputStuff
+            Dictionary<char, int> freq =
+                (from a in inputStuff
                 group a by a into b
-                select b;
+                select b).ToDictionary(b => b.Key, b => b.ToList().Count);
 
-            freq.ToList().ForEach(b => Console.WriteLine(b.Key + " appears: " + b.Count() + " times"));
+            freq.ToList().ForEach(b => Console.WriteLine(b));
 
             Console.ReadLine();
         }
