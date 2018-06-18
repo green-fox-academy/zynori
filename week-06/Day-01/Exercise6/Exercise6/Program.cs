@@ -19,7 +19,7 @@ namespace Exercise6
                 select b).ToDictionary(b => b.Key, b => b.ToList().Count);
 
             freq.ToList().ForEach(b => Console.WriteLine(b));
-
+            
             Console.ReadLine();
         }
     }
