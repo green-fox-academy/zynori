@@ -8,12 +8,12 @@ namespace Pirates
 {
     class Pirate
     {
-        protected string name;
+        protected List<string> pirates;
         protected int toxicateLevel;
 
-        public Pirate(string name, int toxicateLevel)
+        public Pirate(List<string> pirates, int toxicateLevel)
         {
-            this.name = name;
+            this.pirates = pirates;
             this.toxicateLevel = toxicateLevel;
         }
 

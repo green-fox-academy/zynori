@@ -10,7 +10,8 @@ namespace Pirates
     {
         static void Main(string[] args)
         {
-            Pirate pirate = new Pirate("Bela", 0);
+            List<string> pirates = new List<string>();
+            pirates.Add(new Pirate("", 0));
 
             pirate.DrinkSomeRum();
             pirate.DrinkSomeRum();
