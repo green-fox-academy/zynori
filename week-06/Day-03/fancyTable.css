@@ -1,0 +1,56 @@
+﻿body {
+	background: #1E90FF;
+	color: #808080;
+	font-size: 40px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table {
+	margin: 0 auto;
+	width: 50%;
+	text-align: left;
+	border-spacing: 0;
+}
+
+	table th {
+		font-weight: normal;
+	}
+
+	table th,
+	table td {
+		padding: 15px;
+		border: 1px solid #C0C0C0;
+	}
+
+	table tr:first-child > th {
+		border-top: none;
+		border-bottom-width: 5px;
+	}
+
+	table tr:last-child {
+		border-bottom: none;
+	}
+
+	table tr > td:first-child,
+	table tr > th:first-child {
+		border-left: none;
+	}
+
+	table tr > td:last-child,
+	table tr > th:last-child {
+		border-right: none;
+	}
+
+	table th {
+		background: black;
+		color: #C0C0C0;
+	}
+
+	table tr {
+		background: white;
+		
+	}
+
+	table tr.even {
+		background: #DCDCDC;
+	}

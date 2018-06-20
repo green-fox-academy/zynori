@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>login form</title>
+	<link rel="stylesheet" href="loginForm.css" />
+	<script type="text/javascript" src="loginForm.js"></script>
+</head>
+<body>
+	<form action="https://newsletter-ws.herokuapp.com/register" method="post">
+		<div class="mainContent">
+			<div class="inputField">
+				<fieldset>
+					<legend>Sign Up</legend>
+					<input type="text" placeholder="Username" required autofocus /> <br />
+					<input type="email" placeholder="E-mail" required /> <br />
+					<input type="password" placeholder="Password" id="password" required /> <br />
+					<input type="password" placeholder="Retype password" id="confirm_password" oninput="check(this)" required /> <br />
+
+					<h1><input type="submit" value="sign me up" /></h1>
+				</fieldset>
+			</div>
+
+			<div class="or">
+				<p>OR</p>
+			</div>
+
+			<div class="socialMedia">
+				<ul>
+					<li><a href="#" class="fb btn">Login with Facebook</a></li>
+					<li><a href="#" class="twitter btn">Login with Twitter</a></li>
+					<li><a href="#" class="google btn">Login with Google+</a></li>
+				</ul>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
