@@ -46,11 +46,10 @@ table {
 		color: #C0C0C0;
 	}
 
-	table tr {
-		background: white;
-		
+	table tr:nth-child(odd) {
+		background: #DCDCDC;
 	}
 
-	table tr.even {
-		background: #DCDCDC;
+	table tr:nth-child(even) {
+		background: #fff;
 	}
