@@ -11,11 +11,11 @@ namespace Pirates
         public BattleApp()
         {
             Ship ship1 = new Ship();
-            Ship ship2 = new Ship();
             ship1.FillShip();
-            ship2.FillShip();
-
             Console.WriteLine(ship1);
+
+            Ship ship2 = new Ship();
+            ship2.FillShip();
             Console.WriteLine(ship2);
 
             BattleShips(ship1, ship2);
