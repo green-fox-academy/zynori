@@ -16,5 +16,10 @@ namespace FirstApp.Models
             Content = name;
             Id = IdCount++;
         }
+
+        public Greeting()
+        {
+            Id = IdCount++;
+        }
     }
 }

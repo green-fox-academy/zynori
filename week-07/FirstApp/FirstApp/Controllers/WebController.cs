@@ -7,15 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FirstApp.Controllers
 {
-    [Route("api")]
-    public class RESTController : Controller
+    [Route("web")]
+    public class WebController : Controller
     {
         [Route("greeting")]
-        public IActionResult Greeting(string name)
+        public IActionResult Greeting()
         {
-            Greeting greets = new Greeting(name);
-            
-            return new JsonResult(greets);
+            Greeting greeting = new Greeting()
+            {
+                Content = "yolo"
+            };
+
+            return View(greeting);
         }
+
     }
 }
