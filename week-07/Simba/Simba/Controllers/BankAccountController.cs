@@ -21,7 +21,7 @@ namespace Simba.Controllers
         public IActionResult LionKing()
         {
             List<BankAccount> accounts = new List<BankAccount>(){
-                new BankAccount { Name = "Mufasa", Balance = 650_000_000, AnimalType = "Lion" },
+                new BankAccount { Name = "Mufasa", Balance = 650_000_000, AnimalType = "Lion", isKing = true },
                 new BankAccount { Name = "Nala", Balance = 66, AnimalType = "Lion" },
                 new BankAccount { Name = "Timon", Balance = 0, AnimalType = "Meerkat" },
                 new BankAccount { Name = "Zazu", Balance = 1, AnimalType = "Hornbill" }
