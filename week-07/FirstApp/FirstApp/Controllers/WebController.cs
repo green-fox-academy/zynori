@@ -21,10 +21,13 @@ namespace FirstApp.Controllers
             return View(greeting);
         }
 
-        [Route("helloka")]
-        public IActionResult MultipleColoredGreeting()
+        [Route("helloka/{name}")]
+        public IActionResult MultipleColoredGreeting(string name)
         {
-            MultipleColoredGreeting coloredGreeting = new MultipleColoredGreeting();
+            MultipleColoredGreeting coloredGreeting = new MultipleColoredGreeting()
+            {
+                Name = name
+            };
 
             return View(coloredGreeting);
         }

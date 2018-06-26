@@ -8,6 +8,7 @@ namespace FirstApp.Models
     public class MultipleColoredGreeting
     {
         public string[] hellos;
+        public string Name { get; set; }
 
         public MultipleColoredGreeting()
         {
