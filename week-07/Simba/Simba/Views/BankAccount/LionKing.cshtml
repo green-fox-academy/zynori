@@ -7,13 +7,13 @@
 	<thead>
 		<tr><th colspan="4" style="text-align: center">Lion King Bank Accounts</th></tr>
 	</thead>
-	@foreach (BankAccount account in Model)
+	@for (int i = 0; i < Model.Count; i++)
 	{
-	<tr>
-		<td style="padding: 10px">@account.Id</td>
-		<td style="padding: 10px">@account.Name</td>
-		<td style="padding: 10px">@string.Format("{0:N2}", account.Balance) @account.Currency</td>
-		<td style="padding: 10px">@account.AnimalType</td>
-	</tr>
+		<tr>
+			<td style="padding: 10px">@i</td>
+			<td style="padding: 10px">@Model[i].Name</td>
+			<td style="padding: 10px">@string.Format("{0:N2}", @Model[i].Balance) @Model[i].Currency</td>
+			<td style="padding: 10px">@Model[i].AnimalType</td>
+		</tr>
 	}
 </table>
