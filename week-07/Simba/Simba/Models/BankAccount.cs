@@ -8,6 +8,7 @@ namespace Simba.Models
     public class BankAccount
     {
         public bool isKing;
+        public bool isGood;
 
         public string Name { get; set; }
         public int Balance { get; set; }
@@ -18,6 +19,12 @@ namespace Simba.Models
         {
             Currency = "Zebra";
             isKing = false;
+            isGood = true;
+        }
+
+        public void GetMoney(int id)
+        {
+            Balance += 10;
         }
     }
 }
