@@ -8,7 +8,12 @@ namespace OrcFarm.Services
 {
     public interface IOrcGenerator
     {
-        Name GetName();
+        string GetName();
         void SetName(string inputName);
+
+        string GetFood();
+        void AddFood(string inputFood);
+
+        List<string> GetTricks(string Name);
     }
 }

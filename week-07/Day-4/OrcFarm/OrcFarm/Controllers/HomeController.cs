@@ -21,20 +21,28 @@ namespace OrcFarm.Controllers
         [HttpGet("/")]
         public IActionResult Index()
         {
-            return Redirect("/login");
+            return Redirect("login");
         }
 
-        [HttpPost("/login")]
+        [HttpPost("login")]
         public IActionResult GetName(string orcName)
         {
             orcGenerator.SetName(orcName);
-            return RedirectToAction("info");
+            return RedirectToAction("info", orcGenerator);
         }
 
         [HttpGet("info")]
         public IActionResult Info()
         {
-            return View(orcGenerator.GetName());
+            return View(orcGenerator);
+        }
+
+        [HttpPost("info")]
+        public IActionResult Info(string orcFood, string Name)
+        {
+            orcGenerator.AddFood(orcFood);
+            orcGenerator.GetTricks(Name);
+            return RedirectToAction("info", orcGenerator);
         }
 
         [HttpGet("login")]
