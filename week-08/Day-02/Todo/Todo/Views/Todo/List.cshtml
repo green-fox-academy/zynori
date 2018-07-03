@@ -1,23 +1,26 @@
 ﻿@model List<TodoModel>
 @{
-    ViewData["Title"] = "List";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["Title"] = "List";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Todos for today:</h2>
 
-<form action="/addTodo" method="post">
-	Todo:
-	<input type="text" name="title" />
-	Is Urgent:
-	<input type="checkbox" name="isUrgent" value="true" />
-	<button type="submit">Add</button>
-</form>
-
-<ul>
-@foreach (TodoModel todo in Model)
-{
-	<li>Title: @todo.Title; Is Urgent: @todo.IsUrgent</li>
-}
-</ul>
+<table style="width:50%; height:300px; font-size: large">
+	<tr style="background-color:white">
+		<th>Id</th>
+		<th>Title</th>
+		<th>IsUrgent</th>
+		<th>IsDone</th>
+	</tr>
+	@foreach (TodoModel todo in Model)
+	{
+		<tr style="background-color:white" align="center">
+			<td>@todo.Id</td>
+			<td>@todo.Title</td>
+			<td>@todo.IsUrgent</td>
+			<td>@todo.IsDone</td>
+		</tr>
+	}
+</table>
 
