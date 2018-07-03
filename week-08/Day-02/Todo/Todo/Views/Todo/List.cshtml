@@ -8,14 +8,16 @@
 
 <form action="/addTodo" method="post">
 	Todo:
-	<input type="text" name="title" value="title" />
+	<input type="text" name="title" />
+	Is Urgent:
+	<input type="checkbox" name="isUrgent" value="true" />
 	<button type="submit">Add</button>
 </form>
 
 <ul>
 @foreach (TodoModel todo in Model)
 {
-	<li>@todo.Title</li>
+	<li>Title: @todo.Title; Is Urgent: @todo.IsUrgent</li>
 }
 </ul>
 
