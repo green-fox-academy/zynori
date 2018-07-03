@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Todo.Models;
 using Todo.Repository;
 
 namespace Todo.Controllers
@@ -16,15 +17,23 @@ namespace Todo.Controllers
             this.todoRepository = todoRepository;
         }
 
-        public IActionResult Index()
-        {
-            return View("Index");
-        }
-
-        [Route("todo/list")]
+        [Route("/list")]
         public IActionResult List()
         {
-            return View("List");
+            return View(todoRepository.ListAll());
+        }
+
+        [HttpGet("/addTodo")]
+        public IActionResult AddTodo()
+        {
+            return View();
+        }
+
+        [HttpPost("/addTodo")]
+        public IActionResult AddTodo(TodoModel todo)
+        {
+            todoRepository.AddTodo(todo);
+            return Redirect("List");
         }
     }
 }
