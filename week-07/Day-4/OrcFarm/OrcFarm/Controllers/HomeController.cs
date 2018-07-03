@@ -38,10 +38,10 @@ namespace OrcFarm.Controllers
         }
 
         [HttpPost("info")]
-        public IActionResult Info(string orcFood, string Name)
+        public IActionResult Info(string orcFood, string trick)
         {
-            orcGenerator.AddFood(orcFood);
-            orcGenerator.GetTricks(Name);
+            orcGenerator.SetFood(orcFood);
+            orcGenerator.SetTrick(trick);
             return RedirectToAction("info", orcGenerator);
         }
 

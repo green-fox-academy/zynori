@@ -8,31 +8,39 @@ namespace OrcFarm.Services
 {
     public class OrcService : IOrcGenerator
     {
-        Orc orcs = new Orc() { Tricks = new List<string>() };
+        Orc orc = new Orc() { Tricks = new List<string>() };
 
         List<string> tricks = new List<string>() { "dance", "be polite", "build things", "kill... negativity" };
 
-        public void AddFood(string inputFood)
+        public Orc GetOrc()
         {
-            orcs.Food = inputFood;
+            return orc;
         }
 
-        public string GetFood()
+        public string GetTricksFormated()
         {
-            return orcs.Food;
-        }
-
-        public string GetName()
-        {
-            return orcs.Name;
+            return String.Join(", ", orc.Tricks.ToArray());
         }
 
         public void SetName(string inputName)
         {
-            orcs.Name = inputName;
+            orc.Name = inputName;
         }
 
-        public List<string> GetTricks(string Name)
+        public void SetFood(string inputFood)
+        {
+            orc.Food = inputFood;
+        }
+        
+        public void SetTrick(string trick)
+        {
+            if (!orc.Tricks.Contains(trick))
+            {
+                orc.Tricks.Add(trick);
+            }
+        }
+
+        public List<string> GetAvailableTricks()
         {
             return tricks;
         }

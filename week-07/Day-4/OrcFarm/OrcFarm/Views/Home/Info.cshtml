@@ -6,20 +6,24 @@
 }
 
 <div style="margin: 10px auto; text-align: center;">
-	<h2>Hello, I am @Model.GetName()</h2>
+	<h2>Hello, I am @Model.GetOrc().Name</h2>
 
 	<img style="padding: 20px;" src="https://img.fireden.net/tg/image/1458/51/1458518857385.gif">
 	<form action="info" method="post">
 		<p>What should I eat Master?</p>
 		<input type="text" name="orcFood" />
 
-	<h3>@Model.GetName()</h3>
+		<select name="trick">
+			@foreach (var item in Model.GetAvailableTricks())
+			{
+				<option value="@item">@item</option>
+			}
+		</select>
 
+		<h3>@Model.GetOrc().Name</h3>
 	<br />
-
-	
 		<button type="submit" value="submit">Submit</button>
 	</form>
 
-	<span>@Model.GetName() just ate @Model.GetFood() and can </span>
+	<span>@Model.GetOrc().Name just ate @Model.GetOrc().Food and can @Model.GetTricksFormated()</span>
 </div>
