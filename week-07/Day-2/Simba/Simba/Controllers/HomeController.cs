@@ -12,7 +12,7 @@ namespace Simba.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return Redirect("lionking");
         }
 
         public IActionResult About()
