@@ -14,7 +14,7 @@ namespace Todo.Repository
         {
             this.todoContext = todoContext;
         }
-
+        
         public List<TodoModel> ListAll()
         {
             return todoContext.Todos.ToList();
@@ -24,6 +24,13 @@ namespace Todo.Repository
         {
             todoContext.Todos.Add(todo);
             todoContext.SaveChanges();
+        }
+        
+        internal bool ChangeUrgent(int id)
+        {
+            return todoContext.Todos.FirstOrDefault(f => f.Id == id)
+                .IsUrgent == false ? todoContext.Todos.FirstOrDefault(f => f.Id == id)
+                .IsUrgent == true : todoContext.Todos.FirstOrDefault(f => f.Id == id).IsUrgent == false;
         }
     }
 }

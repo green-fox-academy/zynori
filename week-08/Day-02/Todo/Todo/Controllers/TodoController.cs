@@ -35,5 +35,12 @@ namespace Todo.Controllers
             todoRepository.AddTodo(todo);
             return Redirect("List");
         }
+
+        [HttpPost("/changeUrgent")]
+        public IActionResult ChangeUrgent(int id)
+        {
+            todoRepository.ChangeUrgent(id);
+            return Redirect("List");
+        }
     }
 }

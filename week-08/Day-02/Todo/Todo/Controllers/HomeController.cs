@@ -12,7 +12,7 @@ namespace Todo.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return Redirect("/list");
         }
 
         public IActionResult About()
