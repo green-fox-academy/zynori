@@ -9,7 +9,6 @@ namespace Todo.Repository
     public class TodoRepository : ITodoContext
     {
         private TodoContext todoContext;
-        private long idToFind;
 
         public TodoRepository(TodoContext todoContext)
         {

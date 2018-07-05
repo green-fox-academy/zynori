@@ -10,6 +10,7 @@ namespace Todo.Repository
     public class TodoContext : DbContext
     {
         public DbSet<TodoModel> Todos { get; set; }
+        public DbSet<Assignee> Assignees { get; set; }
         public TodoContext(DbContextOptions<TodoContext> options) : base(options)
         {
 
