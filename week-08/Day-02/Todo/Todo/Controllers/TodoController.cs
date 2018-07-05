@@ -36,11 +36,31 @@ namespace Todo.Controllers
             return Redirect("List");
         }
 
-        [HttpPost("/changeUrgent")]
-        public IActionResult ChangeUrgent(int id)
+        [HttpPost("changeUrgent")]
+        public IActionResult ChangeUrgent(long id)
         {
             todoRepository.ChangeUrgent(id);
             return Redirect("List");
+        }
+
+        [HttpPost("changeDone")]
+        public IActionResult ChangeDone(long id)
+        {
+            todoRepository.ChangeDone(id);
+            return Redirect("List");
+        }
+
+        [HttpPost("deleteTodo")]
+        public IActionResult DeleteTodo(long id)
+        {
+            todoRepository.DeleteTodo(id);
+            return Redirect("List");
+        }
+
+        [HttpPost("search")]
+        public IActionResult Search(string input)
+        {
+            return View("List", todoRepository.Search(input));
         }
     }
 }

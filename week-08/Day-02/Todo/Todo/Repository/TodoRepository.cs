@@ -9,6 +9,7 @@ namespace Todo.Repository
     public class TodoRepository : ITodoContext
     {
         private TodoContext todoContext;
+        private long idToFind;
 
         public TodoRepository(TodoContext todoContext)
         {
@@ -26,11 +27,30 @@ namespace Todo.Repository
             todoContext.SaveChanges();
         }
         
-        internal bool ChangeUrgent(int id)
+        public void ChangeUrgent(long id)
         {
-            return todoContext.Todos.FirstOrDefault(f => f.Id == id)
-                .IsUrgent == false ? todoContext.Todos.FirstOrDefault(f => f.Id == id)
-                .IsUrgent == true : todoContext.Todos.FirstOrDefault(f => f.Id == id).IsUrgent == false;
+            TodoModel toChange = todoContext.Todos.Where(f => f.Id == id).FirstOrDefault();
+            toChange.IsUrgent = (toChange.IsUrgent) ? false : true;
+            todoContext.SaveChanges();
+        }
+
+        public void ChangeDone(long id)
+        {
+            TodoModel toDone = todoContext.Todos.Where(f => f.Id == id).FirstOrDefault();
+            toDone.IsDone = (toDone.IsDone) ? false : true;
+            todoContext.SaveChanges();
+        } 
+
+        public void DeleteTodo(long id)
+        {
+            TodoModel toDelete = todoContext.Todos.Where(f => f.Id == id).FirstOrDefault();
+            todoContext.Remove(toDelete);
+            todoContext.SaveChanges();
+        }
+
+        public List<TodoModel> Search(string input)
+        {
+            return todoContext.Todos.Where(s => s.Title.ToLower().Contains(input.ToLower())).ToList();
         }
     }
 }
