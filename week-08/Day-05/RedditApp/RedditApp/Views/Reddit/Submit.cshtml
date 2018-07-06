@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Submit a new post</h2>
+
+<form action="/submit" method="post">
+	<label>Title: </label>
+	<input type="text" name="title" value="" />
+	<label>URL: </label>
+	<input type="url" name="url" value="" />
+	<button type="submit">Submit</button>
+</form>
+
