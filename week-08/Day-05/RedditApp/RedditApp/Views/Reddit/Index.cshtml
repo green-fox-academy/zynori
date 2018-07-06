@@ -9,7 +9,10 @@
 <h2>Trending posts</h2>
 
 <table>
-	<tr>
-		<td></td>
-	</tr>
+	@foreach (Post post in Model)
+	{
+		<tr>
+			<td>@post.Title</td>
+		</tr>
+	}
 </table>

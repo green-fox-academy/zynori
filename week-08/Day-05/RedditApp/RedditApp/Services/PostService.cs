@@ -9,16 +9,21 @@ namespace RedditApp.Services
 {
     public class PostService
     {
-        PostRepository postRepository;
+        private PostRepository postRepository;
 
         public PostService(PostRepository postRepository)
         {
             this.postRepository = postRepository;
         }
 
-        public List<Post> ListAll()
+        public List<Post> GetPosts()
         {
             return postRepository.ListAll();
+        }
+
+        public void Submit(Post post)
+        {
+            postRepository.Create(post);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace RedditApp.Repositories
             return postContext.Posts.ToList();
         }
 
-        public void Submit(Post post)
+        public void Create(Post post)
         {
             postContext.Posts.Add(post);
             postContext.SaveChanges();

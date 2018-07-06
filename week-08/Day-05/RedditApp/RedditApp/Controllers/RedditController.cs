@@ -11,7 +11,7 @@ namespace RedditApp.Controllers
     [Route("")]
     public class RedditController : Controller
     {
-        PostService postService;
+        private PostService postService;
 
         public RedditController(PostService postService)
         {
@@ -20,7 +20,7 @@ namespace RedditApp.Controllers
 
         public IActionResult Index()
         {
-            return View(postService.ListAll());
+            return View(postService.GetPosts());
         }
 
         [HttpGet("/submit")]
@@ -32,7 +32,8 @@ namespace RedditApp.Controllers
         [HttpPost("/submit")]
         public IActionResult Submit(Post post)
         {
-            return Redirect("Index");
+            postService.Submit(post);
+            return RedirectToAction("Index");
         }
     }
 }
