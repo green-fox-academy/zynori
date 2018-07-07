@@ -12,6 +12,7 @@
 	@foreach (Post post in Model)
 	{
 		<tr>
+			<td><form action="/like" method="post"><button type="submit" name="like">+</button></form></td>
 			<td>@post.Title</td>
 		</tr>
 	}

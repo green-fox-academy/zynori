@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RedditApp.Repositories
 {
-    public class PostRepository
+    public class PostRepository : IRedditRepository<Post>
     {
         private PostContext postContext;
 
@@ -15,14 +15,32 @@ namespace RedditApp.Repositories
             this.postContext = postContext;
         }
 
+        public void Create(Post post)
+        {
+            postContext.Posts.Add(post);
+            postContext.SaveChanges();
+        }
+
         public List<Post> ListAll()
         {
             return postContext.Posts.ToList();
         }
 
-        public void Create(Post post)
+        public Post ReadOneElement(int id)
         {
-            postContext.Posts.Add(post);
+            Post getPost = postContext.Posts.Where(t => t.Id == id).FirstOrDefault();
+            return getPost;
+        }
+
+        public void Update(Post post)
+        {
+            postContext.Update(post);
+            postContext.SaveChanges();
+        }
+
+        public void Delete(Post post)
+        {
+            postContext.Remove(post);
             postContext.SaveChanges();
         }
     }

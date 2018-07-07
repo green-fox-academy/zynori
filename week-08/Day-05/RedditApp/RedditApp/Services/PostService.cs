@@ -25,5 +25,10 @@ namespace RedditApp.Services
         {
             postRepository.Create(post);
         }
+
+        public void Like(int id)
+        {
+            postRepository.ReadOneElement(id).Like++;
+        }
     }
 }
