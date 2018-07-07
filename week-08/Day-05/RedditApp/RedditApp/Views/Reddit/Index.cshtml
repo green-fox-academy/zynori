@@ -3,17 +3,19 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+<br />
 <a href="/submit">Submit new post</a>
 
 <h2>Trending posts</h2>
-
 <table>
 	@foreach (Post post in Model)
 	{
-		<tr>
-			<td><form action="/like" method="post"><button type="submit" name="like">+</button></form></td>
-			<td>@post.Title</td>
-		</tr>
+		int rate = post.Like - post.Dislike;
+	<tr>
+		<td>@rate</td>
+		<td><a href="@post.Id/like"> + </a></td>
+		<td><a href="@post.Id/dislike"> - </a></td>
+		<td>@post.Title</td>
+	</tr>
 	}
 </table>

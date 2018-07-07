@@ -28,8 +28,7 @@ namespace RedditApp.Repositories
 
         public Post ReadOneElement(int id)
         {
-            Post getPost = postContext.Posts.Where(t => t.Id == id).FirstOrDefault();
-            return getPost;
+            return postContext.Posts.FirstOrDefault(t => t.Id == id);
         }
 
         public void Update(Post post)

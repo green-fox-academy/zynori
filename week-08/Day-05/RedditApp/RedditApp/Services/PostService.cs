@@ -29,6 +29,13 @@ namespace RedditApp.Services
         public void Like(int id)
         {
             postRepository.ReadOneElement(id).Like++;
+            postRepository.Update(postRepository.ReadOneElement(id));
+        }
+
+        public void Dislike(int id)
+        {
+            postRepository.ReadOneElement(id).Dislike++;
+            postRepository.Update(postRepository.ReadOneElement(id));
         }
     }
 }

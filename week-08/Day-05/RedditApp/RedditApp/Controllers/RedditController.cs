@@ -35,5 +35,19 @@ namespace RedditApp.Controllers
             postService.Submit(post);
             return RedirectToAction("Index");
         }
+
+        [HttpGet("{id}/like")]
+        public IActionResult Like(int id)
+        {
+            postService.Like(id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet("{id}/dislike")]
+        public IActionResult Dislike(int id)
+        {
+            postService.Dislike(id);
+            return RedirectToAction("Index");
+        }
     }
 }
