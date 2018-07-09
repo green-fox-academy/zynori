@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Frontend.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Frontend.Controllers
@@ -93,6 +94,45 @@ namespace Frontend.Controllers
                 return Json(new { result });
             }
             return Json(new { error = "Please provide a working function!" });
+        }
+
+        [HttpPost("/arrays")]
+        public IActionResult Arrays([FromBody] Arrays array)
+        {
+            int result;
+            List<int> doubledResult;
+
+            if (array.what.Equals("sum"))
+            {
+                result = 1;
+                foreach (int item in array.numbers)
+                {
+                    result += item;
+                }
+
+                return Json(new { result });
+            }
+            else if (array.what.Equals("multiply"))
+            {
+                result = 1;
+                foreach (int item in array.numbers)
+                {
+                    result *= item;
+                }
+
+                return Json(new { result });
+            }
+            else if (array.what.Equals("double"))
+            {
+                doubledResult = new List<int>();
+                foreach (int item in array.numbers)
+                {
+                    doubledResult.Add(item * 2);
+                }
+
+                return Json(new { doubledResult });
+            }
+            return Json(new { error = "Please provide what to do with the numbers!" });
         }
     }
 }

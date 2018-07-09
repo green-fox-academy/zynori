@@ -1,4 +1,4 @@
-﻿namespace Frontend.Controllers
+﻿namespace Frontend.Models
 {
     public class Number
     {
