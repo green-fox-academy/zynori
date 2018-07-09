@@ -11,9 +11,9 @@ namespace Frontend.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Index()
         {
-            return new string[] { "value1", "value2" };
+            return File("index.html", "text/html");
         }
 
         // GET api/values/5
