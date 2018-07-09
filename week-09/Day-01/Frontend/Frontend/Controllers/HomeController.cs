@@ -74,5 +74,43 @@ namespace Frontend.Controllers
                 });
             }
         }
+
+        [HttpPost("/dountil/{what}")]
+        public IActionResult DoUntil(string what, [FromBody]Number number)
+        {
+            int result;
+
+            if (number.Until is null)
+            {
+                return Json(new
+                {
+                    error = "Please provide a number!"
+                });
+            }
+            else
+            {
+                if (what == "sum")
+                {
+                    result = 0;
+
+                    for (int i = 1; i < number.Until + 1; i++)
+                    {
+                        result += i;
+                    }
+                    return Json(new { result });
+                }
+                if (what == "factor")
+                {
+                    result = 1;
+
+                    for (int i = 1; i < number.Until + 1; i++)
+                    {
+                        result *= i;
+                    }
+                    return Json(new { result });
+                }
+            }
+            return Json(new { error = "Please provide a working function!" });
+        }
     }
 }
