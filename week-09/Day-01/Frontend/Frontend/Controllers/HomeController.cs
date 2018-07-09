@@ -58,5 +58,21 @@ namespace Frontend.Controllers
                 });
             }
         }
+
+        [HttpGet("/appenda/{appendable}")]
+        public IActionResult AppendA(string appendable)
+        {
+            if (appendable is null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Json(new
+                {
+                    appended = $"{appendable}a"
+                });
+            }
+        }
     }
 }
