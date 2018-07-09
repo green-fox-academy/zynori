@@ -15,12 +15,11 @@ namespace Frontend.Controllers
         }
 
         [HttpGet("/doubling")]
-        public IActionResult Doubling([FromQuery]int input)
+        public IActionResult Doubling([FromQuery]int? input)
         {
-            int result = input * 2;
             if (input != null)
             {
-                return Json(new {received=input, result=result });
+                return Json(new {received=input, result=input*2 });
             }
             else
             {
