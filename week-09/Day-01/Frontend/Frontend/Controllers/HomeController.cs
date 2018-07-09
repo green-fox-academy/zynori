@@ -36,25 +36,18 @@ namespace Frontend.Controllers
         [HttpGet("/greeter")]
         public IActionResult Greeter([FromQuery] string name, [FromQuery] string title)
         {
-            if (name == null)
+            if (name != null && title != null)
             {
                 return Json(new
                 {
-                    error = "Please provide a name!"
-                });
-            }
-            else if (title == null)
-            {
-                return Json(new
-                {
-                    error = "Please provide a title!"
+                    welcome_message = $"Oh, hi there {name}, my dear {title}!"
                 });
             }
             else
             {
                 return Json(new
                 {
-                    welcome_message = $"Oh, hi there {name}, my dear {title}!"
+                    error = "Please provide both the name and the title!"
                 });
             }
         }
@@ -79,36 +72,25 @@ namespace Frontend.Controllers
         public IActionResult DoUntil(string what, [FromBody]Number number)
         {
             int result;
-
-            if (number.Until is null)
+            if (what == "sum")
             {
-                return Json(new
+                result = 0;
+
+                for (int i = 1; i < number.Until + 1; i++)
                 {
-                    error = "Please provide a number!"
-                });
+                    result += i;
+                }
+                return Json(new { result });
             }
-            else
+            if (what == "factor")
             {
-                if (what == "sum")
-                {
-                    result = 0;
+                result = 1;
 
-                    for (int i = 1; i < number.Until + 1; i++)
-                    {
-                        result += i;
-                    }
-                    return Json(new { result });
-                }
-                if (what == "factor")
+                for (int i = 1; i < number.Until + 1; i++)
                 {
-                    result = 1;
-
-                    for (int i = 1; i < number.Until + 1; i++)
-                    {
-                        result *= i;
-                    }
-                    return Json(new { result });
+                    result *= i;
                 }
+                return Json(new { result });
             }
             return Json(new { error = "Please provide a working function!" });
         }
