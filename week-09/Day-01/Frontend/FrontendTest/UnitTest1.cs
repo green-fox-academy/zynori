@@ -69,5 +69,14 @@ namespace FrontendTest
             Assert.Equal(JsonConvert.SerializeObject(new { welcome_message = $"Oh, hi there {name}, my dear {title}!" }),
                 response.Content.ReadAsStringAsync().Result);
         }
+
+        [Fact]
+        public async Task ShouldMissName()
+        {
+            var response = await Client.GetAsync($"/greeter?title=student");
+
+            Assert.Equal(JsonConvert.SerializeObject(new { error = "Please provide both the name and the title!" }),
+                response.Content.ReadAsStringAsync().Result);
+        }
     }
 }
