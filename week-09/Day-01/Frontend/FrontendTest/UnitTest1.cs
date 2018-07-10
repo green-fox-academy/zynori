@@ -39,6 +39,14 @@ namespace FrontendTest
             Assert.Equal(HttpStatusCode.OK, statusCode);
         }
 
+        [Fact]
+        public async Task ShouldGetNotFoundDoubling()
+        {
+            var response = await Client.GetAsync("/doublinger");
+            var statusCode = response.StatusCode;
+            Assert.Equal(HttpStatusCode.NotFound, statusCode);
+        }
+
         [Theory]
         [InlineData(3)]
         [InlineData(9)]
