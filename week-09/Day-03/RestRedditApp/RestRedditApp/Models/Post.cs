@@ -10,7 +10,7 @@ namespace RestRedditApp.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }
-        public DateTime TimeStamp { get; set; }
+        public int TimeStamp { get; set; }
         public int Score { get; set; }
     }
 }
