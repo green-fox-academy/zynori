@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestRedditApp.Repositories
 {
-    public class PostRepository
+    public class PostRepository : IPostRepository<Post>
     {
         private PostContext postContext;
 
