@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestRedditApp.Services
 {
-    public class PostService
+    public class PostService : IService
     {
         PostRepository postRepository;
 
