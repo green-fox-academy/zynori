@@ -7,8 +7,8 @@ using RestRedditApp.Repositories;
 
 namespace RestRedditApp.Migrations
 {
-    [DbContext(typeof(PostContext))]
-    partial class PostContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(RedditContext))]
+    partial class RedditContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -35,6 +35,21 @@ namespace RestRedditApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Posts");
+                });
+
+            modelBuilder.Entity("RestRedditApp.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.Property<int>("Vote");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

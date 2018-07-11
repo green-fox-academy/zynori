@@ -27,10 +27,10 @@ namespace RestRedditApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<PostContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Reddit")));
+            services.AddDbContext<RedditContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Reddit")));
 
             services.AddTransient<PostRepository>();
-            services.AddTransient<PostContext>();
+            services.AddTransient<RedditContext>();
             services.AddTransient<IService, PostService>();
 
             services.Configure<CookiePolicyOptions>(options =>

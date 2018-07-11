@@ -23,7 +23,6 @@ namespace RestRedditApp.Services
 
         public void AddNewPost(Post post)
         {
-            //DateTime.Parse(post.TimeStamp.ToString());
             postRepository.Create(post);
         }
 

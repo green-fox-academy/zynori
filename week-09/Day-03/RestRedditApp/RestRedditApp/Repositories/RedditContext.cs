@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace RestRedditApp.Repositories
 {
-    public class PostContext : DbContext
+    public class RedditContext : DbContext
     {
         public DbSet<Post> Posts { get; set; }
-        public PostContext(DbContextOptions<PostContext> options) : base(options)
+        public DbSet<User> Users { get; set; }
+        public RedditContext(DbContextOptions<RedditContext> options) : base(options)
         {
 
         }

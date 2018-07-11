@@ -8,9 +8,9 @@ namespace RestRedditApp.Repositories
 {
     public class PostRepository : IPostRepository<Post>
     {
-        private PostContext postContext;
+        private RedditContext postContext;
 
-        public PostRepository(PostContext postContext)
+        public PostRepository(RedditContext postContext)
         {
             this.postContext = postContext;
         }

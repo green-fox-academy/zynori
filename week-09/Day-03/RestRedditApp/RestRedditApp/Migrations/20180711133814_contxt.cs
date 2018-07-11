@@ -1,10 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RestRedditApp.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class contxt : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,12 +15,26 @@ namespace RestRedditApp.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(nullable: true),
                     Url = table.Column<string>(nullable: true),
-                    TimeStamp = table.Column<DateTime>(nullable: false),
+                    TimeStamp = table.Column<int>(nullable: false),
                     Score = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Posts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    Vote = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
         }
 
@@ -29,6 +42,9 @@ namespace RestRedditApp.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Posts");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }
