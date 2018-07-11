@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RestRedditApp.Repositories
 {
-    interface IPostRepository<Type>
+    public interface IPostRepository<Type>
     {
         void Create(Type type);
         List<Type> ReadAllPost();

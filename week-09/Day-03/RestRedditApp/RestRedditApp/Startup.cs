@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RestRedditApp.Repositories;
+using RestRedditApp.Services;
 
 namespace RestRedditApp
 {
@@ -27,6 +28,10 @@ namespace RestRedditApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<PostContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Reddit")));
+
+            services.AddTransient<PostRepository>();
+            services.AddTransient<PostContext>();
+            services.AddTransient<IService, PostService>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
