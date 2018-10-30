@@ -4,4 +4,4 @@
 ***
 [linkedin](https://github.com/zynori)
 ***
-[Bookstore](https://github.com/zynori/todo-app)
+[Bookstore](https://github.com/zynori/Bookstore)
